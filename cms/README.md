@@ -1,5 +1,7 @@
 # Schema for Content Management System
 
+![](./diagram.png)
+
 ## Collections
 
 Consist of 4 main collections:

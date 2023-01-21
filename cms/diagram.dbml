@@ -1,0 +1,68 @@
+Table post {
+  id int [pk]
+  user_created int [ref: > directus_users.id]
+  user_updated int [ref: > directus_users.id]
+  date_created timestamp
+  date_updated timestamp
+  status status
+  title varchar
+  description varchar
+  thumbnail varchar [ref: > directus_files.id]
+  author int [ref: > directus_users.id]
+  publish_date timestamp
+  post_type int [ref: > post_type.id]
+  post_type_string varchar
+  slug varchar
+  content text
+  collection int [ref: > collection.id]
+  stats int [ref: > stats.id]
+}
+
+Table directus_users {
+  id int [pk]
+}
+
+Table post_type {
+  id int [pk]
+  name varchar
+  description varchar
+  icon varchar
+  thumbnail varchar [ref: > directus_files.id]
+}
+
+Table directus_files {
+  id varchar [pk]
+}
+
+enum status {
+    published
+    draft
+    archived
+}
+
+Table collection {
+  id int [pk]
+  name varchar
+  description varchar
+  icon varchar
+  slug varchar
+  thumbnail varchar [ref: > directus_files.id]
+  parent int [ref: > collection.id]
+}
+
+Table tag {
+  id int [pk]
+  name varchar
+  description varchar
+  slug varchar
+  thumbnail varchar [ref: > directus_files.id]
+}
+
+Ref post_tag: post.id <> tag.id
+
+Table stats {
+  id int [pk]
+  view_count int
+  like_count int
+  share_count int
+}
