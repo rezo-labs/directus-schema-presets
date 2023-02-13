@@ -762,12 +762,12 @@
         "special": null,
         "interface": "currency",
         "options": {
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "display": "formatted-value",
         "display_options": {
           "format": true,
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "readonly": false,
         "hidden": false,
@@ -1270,12 +1270,12 @@
         "special": null,
         "interface": "currency",
         "options": {
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "display": "formatted-value",
         "display_options": {
           "format": true,
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "readonly": false,
         "hidden": false,
@@ -3059,12 +3059,12 @@
         "special": null,
         "interface": "currency",
         "options": {
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "display": "formatted-value",
         "display_options": {
           "format": true,
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "readonly": true,
         "hidden": false,
@@ -3107,12 +3107,12 @@
         "special": null,
         "interface": "currency",
         "options": {
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "display": "formatted-value",
         "display_options": {
           "format": true,
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "readonly": true,
         "hidden": false,
@@ -3162,44 +3162,6 @@
         "readonly": false,
         "hidden": true,
         "sort": 13,
-        "width": "full",
-        "translations": null,
-        "note": null,
-        "conditions": null,
-        "required": false,
-        "group": null,
-        "validation": null,
-        "validation_message": null
-      }
-    },
-    {
-      "collection": "orders",
-      "field": "history",
-      "type": "alias",
-      "schema": null,
-      "meta": {
-        "collection": "orders",
-        "field": "history",
-        "special": [
-          "o2m"
-        ],
-        "interface": "list-o2m",
-        "options": {
-          "fields": [
-            "timestamp",
-            "status",
-            "total_price",
-            "total_received"
-          ],
-          "layout": "table"
-        },
-        "display": "related-values",
-        "display_options": {
-          "template": "{{timestamp}} - {{status}} - {{total_price}} - {{total_received}}"
-        },
-        "readonly": false,
-        "hidden": false,
-        "sort": 14,
         "width": "full",
         "translations": null,
         "note": null,
@@ -3424,12 +3386,12 @@
         "special": null,
         "interface": "currency",
         "options": {
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "display": "formatted-value",
         "display_options": {
           "format": true,
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "readonly": false,
         "hidden": true,
@@ -3752,12 +3714,12 @@
         "special": null,
         "interface": "currency",
         "options": {
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "display": "formatted-value",
         "display_options": {
           "format": true,
-          "suffix": " đ"
+          "suffix": " USD"
         },
         "readonly": false,
         "hidden": false,

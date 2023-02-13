@@ -557,44 +557,6 @@
         "validation": null,
         "validation_message": null
       }
-    },
-    {
-      "collection": "orders",
-      "field": "history",
-      "type": "alias",
-      "schema": null,
-      "meta": {
-        "collection": "orders",
-        "field": "history",
-        "special": [
-          "o2m"
-        ],
-        "interface": "list-o2m",
-        "options": {
-          "fields": [
-            "timestamp",
-            "status",
-            "total_price",
-            "total_received"
-          ],
-          "layout": "table"
-        },
-        "display": "related-values",
-        "display_options": {
-          "template": "{{timestamp}} - {{status}} - {{total_price}} - {{total_received}}"
-        },
-        "readonly": false,
-        "hidden": false,
-        "sort": 14,
-        "width": "full",
-        "translations": null,
-        "note": null,
-        "conditions": null,
-        "required": false,
-        "group": null,
-        "validation": null,
-        "validation_message": null
-      }
     }
   ],
   "relations": [
