@@ -34,12 +34,12 @@ Use this if you don't want to delete existing relevant collections.
 ## Design Explain
 
 Orders Statuses:
-- Pending: the order is waiting for the customer to make payment.
-- Paid: the order has been paid by the customer.
-- Cancelled: the order has been cancelled by the customer.
-- Expired: the order is marked as expired by the system after a certain time.
+- **Pending**: the order is waiting for the customer to make payment.
+- **Paid**: the order has been paid by the customer.
+- **Cancelled**: the order has been cancelled by the customer.
+- **Expired**: the order is marked as expired by the system after a certain time.
 
 Order Transactions Statuses:
-- Pending: the transaction is waiting for the customer to complete.
-- Success: the transaction has been completed successfully.
-- Error: the transaction is cancelled by the customer or an error while processing the transaction. Use `details` to store the information about the error.
+- **Pending**: the transaction is waiting for the customer to complete.
+- **Success**: the transaction has been completed successfully.
+- **Error**: the transaction is cancelled by the customer or an error while processing the transaction. Use `details` to store the information about the error.
