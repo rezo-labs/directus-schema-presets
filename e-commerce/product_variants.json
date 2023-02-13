@@ -1,0 +1,310 @@
+{
+  "collections": [
+    {
+      "collection": "product_variants",
+      "meta": {
+        "collection": "product_variants",
+        "icon": null,
+        "note": null,
+        "display_template": null,
+        "hidden": true,
+        "singleton": false,
+        "translations": null,
+        "archive_field": null,
+        "archive_app_filter": true,
+        "archive_value": null,
+        "unarchive_value": null,
+        "sort_field": null,
+        "accountability": "all",
+        "color": null,
+        "item_duplication_fields": null,
+        "sort": 3,
+        "group": "ecommerce",
+        "collapse": "open"
+      },
+      "schema": {}
+    }
+  ],
+  "fields": [
+    {
+      "collection": "product_variants",
+      "field": "id",
+      "type": "integer",
+      "schema": {
+        "name": "id",
+        "table": "product_variants",
+        "data_type": "int unsigned",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": null,
+        "numeric_precision": 10,
+        "numeric_scale": 0,
+        "is_generated": false,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_primary_key": true,
+        "has_auto_increment": true,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "comment": ""
+      },
+      "meta": {
+        "collection": "product_variants",
+        "field": "id",
+        "special": null,
+        "interface": "input",
+        "options": null,
+        "display": null,
+        "display_options": null,
+        "readonly": true,
+        "hidden": true,
+        "sort": 1,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": false,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    },
+    {
+      "collection": "product_variants",
+      "field": "sku",
+      "type": "string",
+      "schema": {
+        "name": "sku",
+        "table": "product_variants",
+        "data_type": "varchar",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_generated": false,
+        "is_nullable": true,
+        "is_unique": true,
+        "is_primary_key": false,
+        "has_auto_increment": false,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "comment": ""
+      },
+      "meta": {
+        "collection": "product_variants",
+        "field": "sku",
+        "special": null,
+        "interface": null,
+        "options": null,
+        "display": null,
+        "display_options": null,
+        "readonly": false,
+        "hidden": false,
+        "sort": 2,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": false,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    },
+    {
+      "collection": "product_variants",
+      "field": "product",
+      "type": "integer",
+      "schema": {
+        "name": "product",
+        "table": "product_variants",
+        "data_type": "int unsigned",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": null,
+        "numeric_precision": 10,
+        "numeric_scale": 0,
+        "is_generated": false,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "has_auto_increment": false,
+        "foreign_key_column": "id",
+        "foreign_key_table": "products",
+        "comment": ""
+      },
+      "meta": {
+        "collection": "product_variants",
+        "field": "product",
+        "special": [
+          "m2o"
+        ],
+        "interface": "select-dropdown-m2o",
+        "options": {
+          "template": "{{name}}"
+        },
+        "display": "related-values",
+        "display_options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "hidden": false,
+        "sort": 3,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": true,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    },
+    {
+      "collection": "product_variants",
+      "field": "price",
+      "type": "decimal",
+      "schema": {
+        "name": "price",
+        "table": "product_variants",
+        "data_type": "decimal",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": null,
+        "numeric_precision": 12,
+        "numeric_scale": 2,
+        "is_generated": false,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "has_auto_increment": false,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "comment": ""
+      },
+      "meta": {
+        "collection": "product_variants",
+        "field": "price",
+        "special": null,
+        "interface": "currency",
+        "options": {
+          "suffix": " USD"
+        },
+        "display": "formatted-value",
+        "display_options": {
+          "format": true,
+          "suffix": " USD"
+        },
+        "readonly": false,
+        "hidden": false,
+        "sort": 4,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": false,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    },
+    {
+      "collection": "product_variants",
+      "field": "thumbnail",
+      "type": "uuid",
+      "schema": {
+        "name": "thumbnail",
+        "table": "product_variants",
+        "data_type": "char",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_generated": false,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "has_auto_increment": false,
+        "foreign_key_column": "id",
+        "foreign_key_table": "directus_files",
+        "comment": ""
+      },
+      "meta": {
+        "collection": "product_variants",
+        "field": "thumbnail",
+        "special": [
+          "file"
+        ],
+        "interface": "file-image",
+        "options": null,
+        "display": null,
+        "display_options": null,
+        "readonly": false,
+        "hidden": false,
+        "sort": 5,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": false,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    }
+  ],
+  "relations": [
+    {
+      "collection": "product_variants",
+      "field": "product",
+      "related_collection": "products",
+      "schema": {
+        "table": "product_variants",
+        "column": "product",
+        "foreign_key_table": "products",
+        "foreign_key_column": "id",
+        "constraint_name": "product_variants_product_foreign",
+        "on_update": "RESTRICT",
+        "on_delete": "SET NULL"
+      },
+      "meta": {
+        "many_collection": "product_variants",
+        "many_field": "product",
+        "one_collection": "products",
+        "one_field": "product_variants",
+        "one_collection_field": null,
+        "one_allowed_collections": null,
+        "junction_field": null,
+        "sort_field": null,
+        "one_deselect_action": "nullify"
+      }
+    },
+    {
+      "collection": "product_variants",
+      "field": "thumbnail",
+      "related_collection": "directus_files",
+      "schema": {
+        "table": "product_variants",
+        "column": "thumbnail",
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id",
+        "constraint_name": "product_variants_thumbnail_foreign",
+        "on_update": "RESTRICT",
+        "on_delete": "SET NULL"
+      },
+      "meta": {
+        "many_collection": "product_variants",
+        "many_field": "thumbnail",
+        "one_collection": "directus_files",
+        "one_field": null,
+        "one_collection_field": null,
+        "one_allowed_collections": null,
+        "junction_field": null,
+        "sort_field": null,
+        "one_deselect_action": "nullify"
+      }
+    }
+  ]
+}

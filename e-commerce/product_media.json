@@ -1,0 +1,211 @@
+{
+  "collections": [
+    {
+      "collection": "product_media",
+      "meta": {
+        "collection": "product_media",
+        "icon": "import_export",
+        "note": null,
+        "display_template": null,
+        "hidden": true,
+        "singleton": false,
+        "translations": null,
+        "archive_field": null,
+        "archive_app_filter": true,
+        "archive_value": null,
+        "unarchive_value": null,
+        "sort_field": null,
+        "accountability": "all",
+        "color": null,
+        "item_duplication_fields": null,
+        "sort": 2,
+        "group": "ecommerce",
+        "collapse": "open"
+      },
+      "schema": {}
+    }
+  ],
+  "fields": [
+    {
+      "collection": "product_media",
+      "field": "directus_file",
+      "type": "string",
+      "schema": {
+        "name": "directus_file",
+        "table": "product_media",
+        "data_type": "char",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_generated": false,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "has_auto_increment": false,
+        "foreign_key_column": "id",
+        "foreign_key_table": "directus_files",
+        "comment": ""
+      },
+      "meta": {
+        "collection": "product_media",
+        "field": "directus_file",
+        "special": null,
+        "interface": null,
+        "options": null,
+        "display": null,
+        "display_options": null,
+        "readonly": false,
+        "hidden": true,
+        "sort": null,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": false,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    },
+    {
+      "collection": "product_media",
+      "field": "product",
+      "type": "integer",
+      "schema": {
+        "name": "product",
+        "table": "product_media",
+        "data_type": "int unsigned",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": null,
+        "numeric_precision": 10,
+        "numeric_scale": 0,
+        "is_generated": false,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "has_auto_increment": false,
+        "foreign_key_column": "id",
+        "foreign_key_table": "products",
+        "comment": ""
+      },
+      "meta": {
+        "collection": "product_media",
+        "field": "product",
+        "special": null,
+        "interface": null,
+        "options": null,
+        "display": null,
+        "display_options": null,
+        "readonly": false,
+        "hidden": true,
+        "sort": null,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": false,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    },
+    {
+      "collection": "product_media",
+      "field": "id",
+      "type": "integer",
+      "schema": {
+        "name": "id",
+        "table": "product_media",
+        "data_type": "int unsigned",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": null,
+        "numeric_precision": 10,
+        "numeric_scale": 0,
+        "is_generated": false,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_primary_key": true,
+        "has_auto_increment": true,
+        "foreign_key_column": null,
+        "foreign_key_table": null,
+        "comment": ""
+      },
+      "meta": {
+        "collection": "product_media",
+        "field": "id",
+        "special": null,
+        "interface": null,
+        "options": null,
+        "display": null,
+        "display_options": null,
+        "readonly": false,
+        "hidden": true,
+        "sort": null,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": false,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    }
+  ],
+  "relations": [
+    {
+      "collection": "product_media",
+      "field": "directus_file",
+      "related_collection": "directus_files",
+      "schema": {
+        "table": "product_media",
+        "column": "directus_file",
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id",
+        "constraint_name": "product_media_directus_file_foreign",
+        "on_update": "RESTRICT",
+        "on_delete": "SET NULL"
+      },
+      "meta": {
+        "many_collection": "product_media",
+        "many_field": "directus_file",
+        "one_collection": "directus_files",
+        "one_field": null,
+        "one_collection_field": null,
+        "one_allowed_collections": null,
+        "junction_field": "product",
+        "sort_field": null,
+        "one_deselect_action": "nullify"
+      }
+    },
+    {
+      "collection": "product_media",
+      "field": "product",
+      "related_collection": "products",
+      "schema": {
+        "table": "product_media",
+        "column": "product",
+        "foreign_key_table": "products",
+        "foreign_key_column": "id",
+        "constraint_name": "product_media_product_foreign",
+        "on_update": "RESTRICT",
+        "on_delete": "SET NULL"
+      },
+      "meta": {
+        "many_collection": "product_media",
+        "many_field": "product",
+        "one_collection": "products",
+        "one_field": "media",
+        "one_collection_field": null,
+        "one_allowed_collections": null,
+        "junction_field": "directus_file",
+        "sort_field": null,
+        "one_deselect_action": "nullify"
+      }
+    }
+  ]
+}

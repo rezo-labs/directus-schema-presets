@@ -1,0 +1,116 @@
+Table directus_files {
+  id varchar
+}
+
+Table products {
+  id int [pk]
+  name varchar
+  description text
+  thumbnail varchar [ref: > directus_files.id]
+  status varchar
+  price decimal
+  type int [ref: > product_types.id]
+  category int [ref: > product_categories.id]
+}
+
+Table product_media {
+  id int [pk]
+  product int [ref: > products.id]
+  directus_file varchar [ref: > directus_files.id]
+}
+
+Table product_variants {
+  id int [pk]
+  sku varchar [unique]
+  product int [ref: > products.id]
+  price decimal
+  thumbnail varchar [ref: > directus_files.id]
+}
+
+Table product_types {
+  id int [pk]
+  name varchar
+  description varchar
+  icon varchar
+  thumbnail varchar
+}
+
+Table product_categories {
+  id int [pk]
+  name varchar
+  description varchar
+  icon varchar
+  thumbnail varchar [ref: > directus_files.id]
+  parent int [ref: > product_categories.id]
+}
+
+Table product_tags {
+  id int [pk]
+  name varchar
+  description varchar
+  icon varchar
+  thumbnail varchar [ref: > directus_files.id]
+}
+
+Table products_product_tags {
+  id int [pk]
+  product int [ref: > products.id]
+  product_tag int [ref: > product_tags.id]
+}
+
+Table inventory_items {
+  id int [pk]
+  variant int [ref: > product_variants.id]
+  available int
+  location int [ref: > locations.id]
+}
+
+Table locations {
+  id int [pk]
+  name varchar
+  address1 varchar
+  address2 varchar
+  province varchar
+  city varchar
+}
+
+Table orders {
+  id varchar [pk]
+  date_created timestamp
+  date_updated timestamp
+  customer varchar [ref: > customers.id]
+  status varchar
+  original_price decimal
+  total_price decimal
+  total_received decimal
+  email_sent boolean
+}
+
+Table order_items {
+  id varchar [pk]
+  order varchar [ref: > orders.id]
+  variant varchar [ref: > product_variants.id]
+  quantity int
+  price decimal
+}
+
+Table customers {
+  id varchar [pk]
+  email varchar
+  first_name varchar
+  last_name varchar
+  phone varchar
+  date_created timestamp
+  date_updated timestamp
+}
+
+Table order_transactions {
+  id varchar [pk]
+  date_created timestamp
+  date_updated timestamp
+  order varchar [ref: > orders.id]
+  amount decimal
+  status varchar
+  method varchar
+  details json
+}
