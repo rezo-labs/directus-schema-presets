@@ -1,12 +1,12 @@
 [
   {
-    "module": "cms",
+    "preset": "cms",
     "name": "Content Management System",
     "icon": "wysiwyg",
     "description": "Headless CMS for blogs"
   },
   {
-    "module": "e-commerce",
+    "preset": "e-commerce",
     "name": "E-commerce",
     "icon": "storefront",
     "description": "A base schema for e-commerce website"
