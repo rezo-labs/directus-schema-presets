@@ -544,7 +544,7 @@
                 "numeric_scale": null,
                 "is_generated": false,
                 "is_nullable": true,
-                "is_unique": false,
+                "is_unique": true,
                 "is_primary_key": false,
                 "has_auto_increment": false,
                 "foreign_key_column": null,
@@ -559,7 +559,7 @@
                 "options": {
                     "slug": true
                 },
-                "display": null,
+                "display": "labels",
                 "display_options": null,
                 "readonly": false,
                 "hidden": false,
