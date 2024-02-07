@@ -1,9 +1,9 @@
 {
     "collections": [
         {
-            "collection": "collection",
+            "collection": "sections",
             "meta": {
-                "collection": "collection",
+                "collection": "sections",
                 "icon": null,
                 "note": null,
                 "display_template": null,
@@ -18,7 +18,7 @@
                 "accountability": "all",
                 "color": null,
                 "item_duplication_fields": null,
-                "sort": 6,
+                "sort": 2,
                 "group": "CMS",
                 "collapse": "open"
             },
@@ -27,12 +27,12 @@
     ],
     "fields": [
         {
-            "collection": "collection",
+            "collection": "sections",
             "field": "id",
             "type": "integer",
             "schema": {
                 "name": "id",
-                "table": "collection",
+                "table": "sections",
                 "data_type": "int unsigned",
                 "default_value": null,
                 "generation_expression": null,
@@ -49,7 +49,7 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "collection",
+                "collection": "sections",
                 "field": "id",
                 "special": null,
                 "interface": "input",
@@ -70,143 +70,12 @@
             }
         },
         {
-            "collection": "collection",
-            "field": "name",
+            "collection": "sections",
+            "field": "user_created",
             "type": "string",
             "schema": {
-                "name": "name",
-                "table": "collection",
-                "data_type": "varchar",
-                "default_value": null,
-                "generation_expression": null,
-                "max_length": 255,
-                "numeric_precision": null,
-                "numeric_scale": null,
-                "is_generated": false,
-                "is_nullable": true,
-                "is_unique": false,
-                "is_primary_key": false,
-                "has_auto_increment": false,
-                "foreign_key_column": null,
-                "foreign_key_table": null,
-                "comment": ""
-            },
-            "meta": {
-                "collection": "collection",
-                "field": "name",
-                "special": null,
-                "interface": "input",
-                "options": null,
-                "display": null,
-                "display_options": null,
-                "readonly": false,
-                "hidden": false,
-                "sort": 2,
-                "width": "full",
-                "translations": null,
-                "note": null,
-                "conditions": null,
-                "required": false,
-                "group": null,
-                "validation": null,
-                "validation_message": null
-            }
-        },
-        {
-            "collection": "collection",
-            "field": "slug",
-            "type": "string",
-            "schema": {
-                "name": "slug",
-                "table": "collection",
-                "data_type": "varchar",
-                "default_value": null,
-                "generation_expression": null,
-                "max_length": 255,
-                "numeric_precision": null,
-                "numeric_scale": null,
-                "is_generated": false,
-                "is_nullable": true,
-                "is_unique": true,
-                "is_primary_key": false,
-                "has_auto_increment": false,
-                "foreign_key_column": null,
-                "foreign_key_table": null,
-                "comment": ""
-            },
-            "meta": {
-                "collection": "collection",
-                "field": "slug",
-                "special": null,
-                "interface": "input",
-                "options": {
-                    "slug": true
-                },
-                "display": "labels",
-                "display_options": null,
-                "readonly": false,
-                "hidden": false,
-                "sort": 3,
-                "width": "full",
-                "translations": null,
-                "note": null,
-                "conditions": null,
-                "required": false,
-                "group": null,
-                "validation": null,
-                "validation_message": null
-            }
-        },
-        {
-            "collection": "collection",
-            "field": "description",
-            "type": "string",
-            "schema": {
-                "name": "description",
-                "table": "collection",
-                "data_type": "varchar",
-                "default_value": null,
-                "generation_expression": null,
-                "max_length": 255,
-                "numeric_precision": null,
-                "numeric_scale": null,
-                "is_generated": false,
-                "is_nullable": true,
-                "is_unique": false,
-                "is_primary_key": false,
-                "has_auto_increment": false,
-                "foreign_key_column": null,
-                "foreign_key_table": null,
-                "comment": ""
-            },
-            "meta": {
-                "collection": "collection",
-                "field": "description",
-                "special": null,
-                "interface": "input",
-                "options": null,
-                "display": null,
-                "display_options": null,
-                "readonly": false,
-                "hidden": false,
-                "sort": 4,
-                "width": "full",
-                "translations": null,
-                "note": null,
-                "conditions": null,
-                "required": false,
-                "group": null,
-                "validation": null,
-                "validation_message": null
-            }
-        },
-        {
-            "collection": "collection",
-            "field": "thumbnail",
-            "type": "uuid",
-            "schema": {
-                "name": "thumbnail",
-                "table": "collection",
+                "name": "user_created",
+                "table": "sections",
                 "data_type": "char",
                 "default_value": null,
                 "generation_expression": null,
@@ -219,23 +88,25 @@
                 "is_primary_key": false,
                 "has_auto_increment": false,
                 "foreign_key_column": "id",
-                "foreign_key_table": "directus_files",
+                "foreign_key_table": "directus_users",
                 "comment": ""
             },
             "meta": {
-                "collection": "collection",
-                "field": "thumbnail",
+                "collection": "sections",
+                "field": "user_created",
                 "special": [
-                    "file"
+                    "user-created"
                 ],
-                "interface": "file-image",
-                "options": null,
-                "display": "image",
+                "interface": "select-dropdown-m2o",
+                "options": {
+                    "template": "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+                },
+                "display": "user",
                 "display_options": null,
-                "readonly": false,
-                "hidden": false,
-                "sort": 5,
-                "width": "full",
+                "readonly": true,
+                "hidden": true,
+                "sort": 2,
+                "width": "half",
                 "translations": null,
                 "note": null,
                 "conditions": null,
@@ -246,16 +117,16 @@
             }
         },
         {
-            "collection": "collection",
-            "field": "icon",
-            "type": "string",
+            "collection": "sections",
+            "field": "date_created",
+            "type": "timestamp",
             "schema": {
-                "name": "icon",
-                "table": "collection",
-                "data_type": "varchar",
+                "name": "date_created",
+                "table": "sections",
+                "data_type": "timestamp",
                 "default_value": null,
                 "generation_expression": null,
-                "max_length": 255,
+                "max_length": null,
                 "numeric_precision": null,
                 "numeric_scale": null,
                 "is_generated": false,
@@ -268,13 +139,160 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "collection",
-                "field": "icon",
-                "special": null,
-                "interface": "select-icon",
+                "collection": "sections",
+                "field": "date_created",
+                "special": [
+                    "date-created"
+                ],
+                "interface": "datetime",
                 "options": null,
-                "display": "icon",
+                "display": "datetime",
+                "display_options": {
+                    "relative": true
+                },
+                "readonly": true,
+                "hidden": true,
+                "sort": 3,
+                "width": "half",
+                "translations": null,
+                "note": null,
+                "conditions": null,
+                "required": false,
+                "group": null,
+                "validation": null,
+                "validation_message": null
+            }
+        },
+        {
+            "collection": "sections",
+            "field": "user_updated",
+            "type": "string",
+            "schema": {
+                "name": "user_updated",
+                "table": "sections",
+                "data_type": "char",
+                "default_value": null,
+                "generation_expression": null,
+                "max_length": 36,
+                "numeric_precision": null,
+                "numeric_scale": null,
+                "is_generated": false,
+                "is_nullable": true,
+                "is_unique": false,
+                "is_primary_key": false,
+                "has_auto_increment": false,
+                "foreign_key_column": "id",
+                "foreign_key_table": "directus_users",
+                "comment": ""
+            },
+            "meta": {
+                "collection": "sections",
+                "field": "user_updated",
+                "special": [
+                    "user-updated"
+                ],
+                "interface": "select-dropdown-m2o",
+                "options": {
+                    "template": "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+                },
+                "display": "user",
                 "display_options": null,
+                "readonly": true,
+                "hidden": true,
+                "sort": 4,
+                "width": "half",
+                "translations": null,
+                "note": null,
+                "conditions": null,
+                "required": false,
+                "group": null,
+                "validation": null,
+                "validation_message": null
+            }
+        },
+        {
+            "collection": "sections",
+            "field": "date_updated",
+            "type": "timestamp",
+            "schema": {
+                "name": "date_updated",
+                "table": "sections",
+                "data_type": "timestamp",
+                "default_value": null,
+                "generation_expression": null,
+                "max_length": null,
+                "numeric_precision": null,
+                "numeric_scale": null,
+                "is_generated": false,
+                "is_nullable": true,
+                "is_unique": false,
+                "is_primary_key": false,
+                "has_auto_increment": false,
+                "foreign_key_column": null,
+                "foreign_key_table": null,
+                "comment": ""
+            },
+            "meta": {
+                "collection": "sections",
+                "field": "date_updated",
+                "special": [
+                    "date-updated"
+                ],
+                "interface": "datetime",
+                "options": null,
+                "display": "datetime",
+                "display_options": {
+                    "relative": true
+                },
+                "readonly": true,
+                "hidden": true,
+                "sort": 5,
+                "width": "half",
+                "translations": null,
+                "note": null,
+                "conditions": null,
+                "required": false,
+                "group": null,
+                "validation": null,
+                "validation_message": null
+            }
+        },
+        {
+            "collection": "sections",
+            "field": "type",
+            "type": "integer",
+            "schema": {
+                "name": "type",
+                "table": "sections",
+                "data_type": "int unsigned",
+                "default_value": null,
+                "generation_expression": null,
+                "max_length": null,
+                "numeric_precision": 10,
+                "numeric_scale": 0,
+                "is_generated": false,
+                "is_nullable": true,
+                "is_unique": false,
+                "is_primary_key": false,
+                "has_auto_increment": false,
+                "foreign_key_column": "id",
+                "foreign_key_table": "section_types",
+                "comment": ""
+            },
+            "meta": {
+                "collection": "sections",
+                "field": "type",
+                "special": [
+                    "m2o"
+                ],
+                "interface": "select-dropdown-m2o",
+                "options": {
+                    "template": "{{name}}"
+                },
+                "display": "related-values",
+                "display_options": {
+                    "template": "{{name}}"
+                },
                 "readonly": false,
                 "hidden": false,
                 "sort": 6,
@@ -289,41 +307,39 @@
             }
         },
         {
-            "collection": "collection",
-            "field": "parent",
-            "type": "integer",
+            "collection": "sections",
+            "field": "data",
+            "type": "json",
             "schema": {
-                "name": "parent",
-                "table": "collection",
-                "data_type": "int unsigned",
+                "name": "data",
+                "table": "sections",
+                "data_type": "json",
                 "default_value": null,
                 "generation_expression": null,
                 "max_length": null,
-                "numeric_precision": 10,
-                "numeric_scale": 0,
+                "numeric_precision": null,
+                "numeric_scale": null,
                 "is_generated": false,
                 "is_nullable": true,
                 "is_unique": false,
                 "is_primary_key": false,
                 "has_auto_increment": false,
-                "foreign_key_column": "id",
-                "foreign_key_table": "collection",
+                "foreign_key_column": null,
+                "foreign_key_table": null,
                 "comment": ""
             },
             "meta": {
-                "collection": "collection",
-                "field": "parent",
+                "collection": "sections",
+                "field": "data",
                 "special": [
-                    "m2o"
+                    "cast-json"
                 ],
-                "interface": "select-dropdown-m2o",
+                "interface": "key-value",
                 "options": {
-                    "template": "{{name}}"
+                    "allowOther": true
                 },
-                "display": "related-values",
-                "display_options": {
-                    "template": "{{name}}"
-                },
+                "display": null,
+                "display_options": null,
                 "readonly": false,
                 "hidden": false,
                 "sort": 7,
@@ -340,22 +356,22 @@
     ],
     "relations": [
         {
-            "collection": "collection",
-            "field": "parent",
-            "related_collection": "collection",
+            "collection": "sections",
+            "field": "type",
+            "related_collection": "section_types",
             "schema": {
-                "table": "collection",
-                "column": "parent",
-                "foreign_key_table": "collection",
+                "table": "sections",
+                "column": "type",
+                "foreign_key_table": "section_types",
                 "foreign_key_column": "id",
-                "constraint_name": "collection_parent_foreign",
+                "constraint_name": "sections_type_foreign",
                 "on_update": "RESTRICT",
                 "on_delete": "NO ACTION"
             },
             "meta": {
-                "many_collection": "collection",
-                "many_field": "parent",
-                "one_collection": "collection",
+                "many_collection": "sections",
+                "many_field": "type",
+                "one_collection": "section_types",
                 "one_field": null,
                 "one_collection_field": null,
                 "one_allowed_collections": null,
@@ -365,22 +381,47 @@
             }
         },
         {
-            "collection": "collection",
-            "field": "thumbnail",
-            "related_collection": "directus_files",
+            "collection": "sections",
+            "field": "user_created",
+            "related_collection": "directus_users",
             "schema": {
-                "table": "collection",
-                "column": "thumbnail",
-                "foreign_key_table": "directus_files",
+                "table": "sections",
+                "column": "user_created",
+                "foreign_key_table": "directus_users",
                 "foreign_key_column": "id",
-                "constraint_name": "collection_thumbnail_foreign",
+                "constraint_name": "sections_user_created_foreign",
                 "on_update": "RESTRICT",
-                "on_delete": "SET NULL"
+                "on_delete": "RESTRICT"
             },
             "meta": {
-                "many_collection": "collection",
-                "many_field": "thumbnail",
-                "one_collection": "directus_files",
+                "many_collection": "sections",
+                "many_field": "user_created",
+                "one_collection": "directus_users",
+                "one_field": null,
+                "one_collection_field": null,
+                "one_allowed_collections": null,
+                "junction_field": null,
+                "sort_field": null,
+                "one_deselect_action": "nullify"
+            }
+        },
+        {
+            "collection": "sections",
+            "field": "user_updated",
+            "related_collection": "directus_users",
+            "schema": {
+                "table": "sections",
+                "column": "user_updated",
+                "foreign_key_table": "directus_users",
+                "foreign_key_column": "id",
+                "constraint_name": "sections_user_updated_foreign",
+                "on_update": "RESTRICT",
+                "on_delete": "RESTRICT"
+            },
+            "meta": {
+                "many_collection": "sections",
+                "many_field": "user_updated",
+                "one_collection": "directus_users",
                 "one_field": null,
                 "one_collection_field": null,
                 "one_allowed_collections": null,
