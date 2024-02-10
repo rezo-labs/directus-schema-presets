@@ -367,11 +367,11 @@
                 ],
                 "interface": "select-dropdown-m2o",
                 "options": {
-                    "template": "{{name}}"
+                    "template": "{{translations}}"
                 },
                 "display": "related-values",
                 "display_options": {
-                    "template": "{{name}}"
+                    "template": "{{translations}}"
                 },
                 "readonly": false,
                 "hidden": false,
@@ -539,8 +539,12 @@
                     "languageField": "name",
                     "defaultLanguage": "en-US"
                 },
-                "display": null,
-                "display_options": null,
+                "display": "translations",
+                "display_options": {
+                    "template": "{{title}}",
+                    "userLanguage": true,
+                    "languageField": "name"
+                },
                 "readonly": false,
                 "hidden": false,
                 "sort": 11,
@@ -584,11 +588,11 @@
                 ],
                 "interface": "select-dropdown-m2o",
                 "options": {
-                    "template": "{{name}}"
+                    "template": "{{translations}}"
                 },
                 "display": "related-values",
                 "display_options": {
-                    "template": "{{name}}"
+                    "template": "{{translations}}"
                 },
                 "readonly": false,
                 "hidden": false,
@@ -616,11 +620,11 @@
                 ],
                 "interface": "list-m2m",
                 "options": {
-                    "template": "{{tag_id.name}}"
+                    "template": "{{tag_id.translations}}"
                 },
                 "display": "related-values",
                 "display_options": {
-                    "template": "{{tag_id.name}}"
+                    "template": "{{tag_id.translations}}"
                 },
                 "readonly": false,
                 "hidden": false,
