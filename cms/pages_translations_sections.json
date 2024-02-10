@@ -1,10 +1,10 @@
 {
     "collections": [
         {
-            "collection": "post_tag",
+            "collection": "pages_translations_sections",
             "meta": {
-                "collection": "post_tag",
-                "icon": null,
+                "collection": "pages_translations_sections",
+                "icon": "import_export",
                 "note": null,
                 "display_template": null,
                 "hidden": true,
@@ -18,7 +18,7 @@
                 "accountability": "all",
                 "color": null,
                 "item_duplication_fields": null,
-                "sort": 9,
+                "sort": 12,
                 "group": "CMS",
                 "collapse": "open"
             },
@@ -27,12 +27,12 @@
     ],
     "fields": [
         {
-            "collection": "post_tag",
-            "field": "post_id",
+            "collection": "pages_translations_sections",
+            "field": "pages_translations_id",
             "type": "integer",
             "schema": {
-                "name": "post_id",
-                "table": "post_tag",
+                "name": "pages_translations_id",
+                "table": "pages_translations_sections",
                 "data_type": "int unsigned",
                 "default_value": null,
                 "generation_expression": null,
@@ -45,12 +45,12 @@
                 "is_primary_key": false,
                 "has_auto_increment": false,
                 "foreign_key_column": "id",
-                "foreign_key_table": "post",
+                "foreign_key_table": "pages_translations",
                 "comment": ""
             },
             "meta": {
-                "collection": "post_tag",
-                "field": "post_id",
+                "collection": "pages_translations_sections",
+                "field": "pages_translations_id",
                 "special": null,
                 "interface": null,
                 "options": null,
@@ -70,12 +70,12 @@
             }
         },
         {
-            "collection": "post_tag",
-            "field": "tag_id",
+            "collection": "pages_translations_sections",
+            "field": "sections_id",
             "type": "integer",
             "schema": {
-                "name": "tag_id",
-                "table": "post_tag",
+                "name": "sections_id",
+                "table": "pages_translations_sections",
                 "data_type": "int unsigned",
                 "default_value": null,
                 "generation_expression": null,
@@ -88,12 +88,12 @@
                 "is_primary_key": false,
                 "has_auto_increment": false,
                 "foreign_key_column": "id",
-                "foreign_key_table": "tag",
+                "foreign_key_table": "sections",
                 "comment": ""
             },
             "meta": {
-                "collection": "post_tag",
-                "field": "tag_id",
+                "collection": "pages_translations_sections",
+                "field": "sections_id",
                 "special": null,
                 "interface": null,
                 "options": null,
@@ -113,12 +113,12 @@
             }
         },
         {
-            "collection": "post_tag",
+            "collection": "pages_translations_sections",
             "field": "id",
             "type": "integer",
             "schema": {
                 "name": "id",
-                "table": "post_tag",
+                "table": "pages_translations_sections",
                 "data_type": "int unsigned",
                 "default_value": null,
                 "generation_expression": null,
@@ -135,7 +135,7 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "post_tag",
+                "collection": "pages_translations_sections",
                 "field": "id",
                 "special": null,
                 "interface": null,
@@ -154,55 +154,98 @@
                 "validation": null,
                 "validation_message": null
             }
+        },
+        {
+            "collection": "pages_translations_sections",
+            "field": "sort",
+            "type": "integer",
+            "schema": {
+                "name": "sort",
+                "table": "pages_translations_sections",
+                "data_type": "int",
+                "default_value": null,
+                "generation_expression": null,
+                "max_length": null,
+                "numeric_precision": 10,
+                "numeric_scale": 0,
+                "is_generated": false,
+                "is_nullable": true,
+                "is_unique": false,
+                "is_primary_key": false,
+                "has_auto_increment": false,
+                "foreign_key_column": null,
+                "foreign_key_table": null,
+                "comment": ""
+            },
+            "meta": {
+                "collection": "pages_translations_sections",
+                "field": "sort",
+                "special": null,
+                "interface": null,
+                "options": null,
+                "display": null,
+                "display_options": null,
+                "readonly": false,
+                "hidden": false,
+                "sort": null,
+                "width": "full",
+                "translations": null,
+                "note": null,
+                "conditions": null,
+                "required": false,
+                "group": null,
+                "validation": null,
+                "validation_message": null
+            }
         }
     ],
     "relations": [
         {
-            "collection": "post_tag",
-            "field": "post_id",
-            "related_collection": "post",
+            "collection": "pages_translations_sections",
+            "field": "pages_translations_id",
+            "related_collection": "pages_translations",
             "schema": {
-                "table": "post_tag",
-                "column": "post_id",
-                "foreign_key_table": "post",
+                "table": "pages_translations_sections",
+                "column": "pages_translations_id",
+                "foreign_key_table": "pages_translations",
                 "foreign_key_column": "id",
-                "constraint_name": "post_tag_post_id_foreign",
+                "constraint_name": "pages_translations_sections_pages_translations_id_foreign",
                 "on_update": "RESTRICT",
                 "on_delete": "SET NULL"
             },
             "meta": {
-                "many_collection": "post_tag",
-                "many_field": "post_id",
-                "one_collection": "post",
-                "one_field": "tags",
+                "many_collection": "pages_translations_sections",
+                "many_field": "pages_translations_id",
+                "one_collection": "pages_translations",
+                "one_field": "sections",
                 "one_collection_field": null,
                 "one_allowed_collections": null,
-                "junction_field": "tag_id",
-                "sort_field": null,
+                "junction_field": "sections_id",
+                "sort_field": "sort",
                 "one_deselect_action": "nullify"
             }
         },
         {
-            "collection": "post_tag",
-            "field": "tag_id",
-            "related_collection": "tag",
+            "collection": "pages_translations_sections",
+            "field": "sections_id",
+            "related_collection": "sections",
             "schema": {
-                "table": "post_tag",
-                "column": "tag_id",
-                "foreign_key_table": "tag",
+                "table": "pages_translations_sections",
+                "column": "sections_id",
+                "foreign_key_table": "sections",
                 "foreign_key_column": "id",
-                "constraint_name": "post_tag_tag_id_foreign",
+                "constraint_name": "pages_translations_sections_sections_id_foreign",
                 "on_update": "RESTRICT",
                 "on_delete": "SET NULL"
             },
             "meta": {
-                "many_collection": "post_tag",
-                "many_field": "tag_id",
-                "one_collection": "tag",
+                "many_collection": "pages_translations_sections",
+                "many_field": "sections_id",
+                "one_collection": "sections",
                 "one_field": null,
                 "one_collection_field": null,
                 "one_allowed_collections": null,
-                "junction_field": "post_id",
+                "junction_field": "pages_translations_id",
                 "sort_field": null,
                 "one_deselect_action": "nullify"
             }

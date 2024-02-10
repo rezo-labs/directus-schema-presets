@@ -1,13 +1,13 @@
 {
     "collections": [
         {
-            "collection": "stats",
+            "collection": "languages",
             "meta": {
-                "collection": "stats",
-                "icon": null,
+                "collection": "languages",
+                "icon": "language",
                 "note": null,
                 "display_template": null,
-                "hidden": true,
+                "hidden": false,
                 "singleton": false,
                 "translations": null,
                 "archive_field": null,
@@ -18,7 +18,7 @@
                 "accountability": "all",
                 "color": null,
                 "item_duplication_fields": null,
-                "sort": 10,
+                "sort": 8,
                 "group": "CMS",
                 "collapse": "open"
             },
@@ -27,73 +27,30 @@
     ],
     "fields": [
         {
-            "collection": "stats",
-            "field": "id",
-            "type": "integer",
+            "collection": "languages",
+            "field": "code",
+            "type": "string",
             "schema": {
-                "name": "id",
-                "table": "stats",
-                "data_type": "int unsigned",
+                "name": "code",
+                "table": "languages",
+                "data_type": "varchar",
                 "default_value": null,
                 "generation_expression": null,
-                "max_length": null,
-                "numeric_precision": 10,
-                "numeric_scale": 0,
+                "max_length": 255,
+                "numeric_precision": null,
+                "numeric_scale": null,
                 "is_generated": false,
                 "is_nullable": false,
                 "is_unique": false,
                 "is_primary_key": true,
-                "has_auto_increment": true,
-                "foreign_key_column": null,
-                "foreign_key_table": null,
-                "comment": ""
-            },
-            "meta": {
-                "collection": "stats",
-                "field": "id",
-                "special": null,
-                "interface": "input",
-                "options": null,
-                "display": null,
-                "display_options": null,
-                "readonly": true,
-                "hidden": true,
-                "sort": null,
-                "width": "full",
-                "translations": null,
-                "note": null,
-                "conditions": null,
-                "required": false,
-                "group": null,
-                "validation": null,
-                "validation_message": null
-            }
-        },
-        {
-            "collection": "stats",
-            "field": "view_count",
-            "type": "integer",
-            "schema": {
-                "name": "view_count",
-                "table": "stats",
-                "data_type": "int",
-                "default_value": 0,
-                "generation_expression": null,
-                "max_length": null,
-                "numeric_precision": 10,
-                "numeric_scale": 0,
-                "is_generated": false,
-                "is_nullable": true,
-                "is_unique": false,
-                "is_primary_key": false,
                 "has_auto_increment": false,
                 "foreign_key_column": null,
                 "foreign_key_table": null,
                 "comment": ""
             },
             "meta": {
-                "collection": "stats",
-                "field": "view_count",
+                "collection": "languages",
+                "field": "code",
                 "special": null,
                 "interface": "input",
                 "options": null,
@@ -113,18 +70,18 @@
             }
         },
         {
-            "collection": "stats",
-            "field": "like_count",
-            "type": "integer",
+            "collection": "languages",
+            "field": "name",
+            "type": "string",
             "schema": {
-                "name": "like_count",
-                "table": "stats",
-                "data_type": "int",
-                "default_value": 0,
+                "name": "name",
+                "table": "languages",
+                "data_type": "varchar",
+                "default_value": null,
                 "generation_expression": null,
-                "max_length": null,
-                "numeric_precision": 10,
-                "numeric_scale": 0,
+                "max_length": 255,
+                "numeric_precision": null,
+                "numeric_scale": null,
                 "is_generated": false,
                 "is_nullable": true,
                 "is_unique": false,
@@ -135,8 +92,8 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "stats",
-                "field": "like_count",
+                "collection": "languages",
+                "field": "name",
                 "special": null,
                 "interface": "input",
                 "options": null,
@@ -156,18 +113,18 @@
             }
         },
         {
-            "collection": "stats",
-            "field": "share_count",
-            "type": "integer",
+            "collection": "languages",
+            "field": "direction",
+            "type": "string",
             "schema": {
-                "name": "share_count",
-                "table": "stats",
-                "data_type": "int",
-                "default_value": 0,
+                "name": "direction",
+                "table": "languages",
+                "data_type": "varchar",
+                "default_value": "ltr",
                 "generation_expression": null,
-                "max_length": null,
-                "numeric_precision": 10,
-                "numeric_scale": 0,
+                "max_length": 255,
+                "numeric_precision": null,
+                "numeric_scale": null,
                 "is_generated": false,
                 "is_nullable": true,
                 "is_unique": false,
@@ -178,11 +135,22 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "stats",
-                "field": "share_count",
+                "collection": "languages",
+                "field": "direction",
                 "special": null,
-                "interface": "input",
-                "options": null,
+                "interface": "select-dropdown",
+                "options": {
+                    "choices": [
+                        {
+                            "text": "Left to right",
+                            "value": "ltr"
+                        },
+                        {
+                            "text": "Right to left",
+                            "value": "rtl"
+                        }
+                    ]
+                },
                 "display": null,
                 "display_options": null,
                 "readonly": false,

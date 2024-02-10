@@ -1,0 +1,14 @@
+{
+  "name": "schema-presets",
+  "version": "1.0.0",
+  "description": "This repository contains schemas that are commonly used in various applications. Use this with the [Schema Management Module](https://github.com/rezo-labs/directus-extension-schema-management-module) to easily & rapidly setup the data model of Directus apps.",
+  "main": "combine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^10.3.10"
+  }
+}
