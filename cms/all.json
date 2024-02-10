@@ -1746,6 +1746,104 @@
       }
     },
     {
+      "collection": "pages_translations",
+      "field": "header",
+      "type": "integer",
+      "schema": {
+        "name": "header",
+        "table": "pages_translations",
+        "data_type": "int unsigned",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": null,
+        "numeric_precision": 10,
+        "numeric_scale": 0,
+        "is_generated": false,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "has_auto_increment": false,
+        "foreign_key_column": "id",
+        "foreign_key_table": "sections",
+        "comment": ""
+      },
+      "meta": {
+        "collection": "pages_translations",
+        "field": "header",
+        "special": [
+          "m2o"
+        ],
+        "interface": "select-dropdown-m2o",
+        "options": {
+          "template": "{{id}}"
+        },
+        "display": "related-values",
+        "display_options": {
+          "template": "{{id}}"
+        },
+        "readonly": false,
+        "hidden": false,
+        "sort": 9,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": false,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    },
+    {
+      "collection": "pages_translations",
+      "field": "footer",
+      "type": "integer",
+      "schema": {
+        "name": "footer",
+        "table": "pages_translations",
+        "data_type": "int unsigned",
+        "default_value": null,
+        "generation_expression": null,
+        "max_length": null,
+        "numeric_precision": 10,
+        "numeric_scale": 0,
+        "is_generated": false,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "has_auto_increment": false,
+        "foreign_key_column": "id",
+        "foreign_key_table": "sections",
+        "comment": ""
+      },
+      "meta": {
+        "collection": "pages_translations",
+        "field": "footer",
+        "special": [
+          "m2o"
+        ],
+        "interface": "select-dropdown-m2o",
+        "options": {
+          "template": "{{id}}"
+        },
+        "display": "related-values",
+        "display_options": {
+          "template": "{{id}}"
+        },
+        "readonly": false,
+        "hidden": false,
+        "sort": 10,
+        "width": "full",
+        "translations": null,
+        "note": null,
+        "conditions": null,
+        "required": false,
+        "group": null,
+        "validation": null,
+        "validation_message": null
+      }
+    },
+    {
       "collection": "pages_translations_sections",
       "field": "pages_translations_id",
       "type": "integer",
@@ -4673,6 +4771,56 @@
         "one_collection_field": null,
         "one_allowed_collections": null,
         "junction_field": "languages_code",
+        "sort_field": null,
+        "one_deselect_action": "nullify"
+      }
+    },
+    {
+      "collection": "pages_translations",
+      "field": "header",
+      "related_collection": "sections",
+      "schema": {
+        "table": "pages_translations",
+        "column": "header",
+        "foreign_key_table": "sections",
+        "foreign_key_column": "id",
+        "constraint_name": "pages_translations_header_foreign",
+        "on_update": "RESTRICT",
+        "on_delete": "SET NULL"
+      },
+      "meta": {
+        "many_collection": "pages_translations",
+        "many_field": "header",
+        "one_collection": "sections",
+        "one_field": null,
+        "one_collection_field": null,
+        "one_allowed_collections": null,
+        "junction_field": null,
+        "sort_field": null,
+        "one_deselect_action": "nullify"
+      }
+    },
+    {
+      "collection": "pages_translations",
+      "field": "footer",
+      "related_collection": "sections",
+      "schema": {
+        "table": "pages_translations",
+        "column": "footer",
+        "foreign_key_table": "sections",
+        "foreign_key_column": "id",
+        "constraint_name": "pages_translations_footer_foreign",
+        "on_update": "RESTRICT",
+        "on_delete": "SET NULL"
+      },
+      "meta": {
+        "many_collection": "pages_translations",
+        "many_field": "footer",
+        "one_collection": "sections",
+        "one_field": null,
+        "one_collection_field": null,
+        "one_allowed_collections": null,
+        "junction_field": null,
         "sort_field": null,
         "one_deselect_action": "nullify"
       }
