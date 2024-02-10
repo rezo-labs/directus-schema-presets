@@ -1,9 +1,9 @@
 {
     "collections": [
         {
-            "collection": "tag_translations",
+            "collection": "post_type_translations",
             "meta": {
-                "collection": "tag_translations",
+                "collection": "post_type_translations",
                 "icon": "import_export",
                 "note": null,
                 "display_template": null,
@@ -18,7 +18,7 @@
                 "accountability": "all",
                 "color": null,
                 "item_duplication_fields": null,
-                "sort": 16,
+                "sort": 14,
                 "group": "CMS",
                 "collapse": "open"
             },
@@ -27,12 +27,12 @@
     ],
     "fields": [
         {
-            "collection": "tag_translations",
+            "collection": "post_type_translations",
             "field": "id",
             "type": "integer",
             "schema": {
                 "name": "id",
-                "table": "tag_translations",
+                "table": "post_type_translations",
                 "data_type": "int unsigned",
                 "default_value": null,
                 "generation_expression": null,
@@ -49,7 +49,7 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "tag_translations",
+                "collection": "post_type_translations",
                 "field": "id",
                 "special": null,
                 "interface": null,
@@ -70,12 +70,12 @@
             }
         },
         {
-            "collection": "tag_translations",
-            "field": "tag_id",
+            "collection": "post_type_translations",
+            "field": "post_type_id",
             "type": "integer",
             "schema": {
-                "name": "tag_id",
-                "table": "tag_translations",
+                "name": "post_type_id",
+                "table": "post_type_translations",
                 "data_type": "int unsigned",
                 "default_value": null,
                 "generation_expression": null,
@@ -88,12 +88,12 @@
                 "is_primary_key": false,
                 "has_auto_increment": false,
                 "foreign_key_column": "id",
-                "foreign_key_table": "tag",
+                "foreign_key_table": "post_type",
                 "comment": ""
             },
             "meta": {
-                "collection": "tag_translations",
-                "field": "tag_id",
+                "collection": "post_type_translations",
+                "field": "post_type_id",
                 "special": null,
                 "interface": null,
                 "options": null,
@@ -113,12 +113,12 @@
             }
         },
         {
-            "collection": "tag_translations",
+            "collection": "post_type_translations",
             "field": "languages_code",
             "type": "string",
             "schema": {
                 "name": "languages_code",
-                "table": "tag_translations",
+                "table": "post_type_translations",
                 "data_type": "varchar",
                 "default_value": null,
                 "generation_expression": null,
@@ -135,7 +135,7 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "tag_translations",
+                "collection": "post_type_translations",
                 "field": "languages_code",
                 "special": null,
                 "interface": null,
@@ -156,12 +156,12 @@
             }
         },
         {
-            "collection": "tag_translations",
+            "collection": "post_type_translations",
             "field": "name",
             "type": "string",
             "schema": {
                 "name": "name",
-                "table": "tag_translations",
+                "table": "post_type_translations",
                 "data_type": "varchar",
                 "default_value": null,
                 "generation_expression": null,
@@ -178,7 +178,7 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "tag_translations",
+                "collection": "post_type_translations",
                 "field": "name",
                 "special": null,
                 "interface": "input",
@@ -199,12 +199,12 @@
             }
         },
         {
-            "collection": "tag_translations",
+            "collection": "post_type_translations",
             "field": "slug",
             "type": "string",
             "schema": {
                 "name": "slug",
-                "table": "tag_translations",
+                "table": "post_type_translations",
                 "data_type": "varchar",
                 "default_value": null,
                 "generation_expression": null,
@@ -221,7 +221,7 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "tag_translations",
+                "collection": "post_type_translations",
                 "field": "slug",
                 "special": null,
                 "interface": "input",
@@ -244,12 +244,12 @@
             }
         },
         {
-            "collection": "tag_translations",
+            "collection": "post_type_translations",
             "field": "description",
             "type": "text",
             "schema": {
                 "name": "description",
-                "table": "tag_translations",
+                "table": "post_type_translations",
                 "data_type": "mediumtext",
                 "default_value": null,
                 "generation_expression": null,
@@ -266,7 +266,7 @@
                 "comment": ""
             },
             "meta": {
-                "collection": "tag_translations",
+                "collection": "post_type_translations",
                 "field": "description",
                 "special": null,
                 "interface": "input-multiline",
@@ -289,47 +289,47 @@
     ],
     "relations": [
         {
-            "collection": "tag_translations",
+            "collection": "post_type_translations",
             "field": "languages_code",
             "related_collection": "languages",
             "schema": {
-                "table": "tag_translations",
+                "table": "post_type_translations",
                 "column": "languages_code",
                 "foreign_key_table": "languages",
                 "foreign_key_column": "code",
-                "constraint_name": "tag_translations_languages_code_foreign",
+                "constraint_name": "post_type_translations_languages_code_foreign",
                 "on_update": "RESTRICT",
                 "on_delete": "SET NULL"
             },
             "meta": {
-                "many_collection": "tag_translations",
+                "many_collection": "post_type_translations",
                 "many_field": "languages_code",
                 "one_collection": "languages",
                 "one_field": null,
                 "one_collection_field": null,
                 "one_allowed_collections": null,
-                "junction_field": "tag_id",
+                "junction_field": "post_type_id",
                 "sort_field": null,
                 "one_deselect_action": "nullify"
             }
         },
         {
-            "collection": "tag_translations",
-            "field": "tag_id",
-            "related_collection": "tag",
+            "collection": "post_type_translations",
+            "field": "post_type_id",
+            "related_collection": "post_type",
             "schema": {
-                "table": "tag_translations",
-                "column": "tag_id",
-                "foreign_key_table": "tag",
+                "table": "post_type_translations",
+                "column": "post_type_id",
+                "foreign_key_table": "post_type",
                 "foreign_key_column": "id",
-                "constraint_name": "tag_translations_tag_id_foreign",
+                "constraint_name": "post_type_translations_post_type_id_foreign",
                 "on_update": "RESTRICT",
                 "on_delete": "SET NULL"
             },
             "meta": {
-                "many_collection": "tag_translations",
-                "many_field": "tag_id",
-                "one_collection": "tag",
+                "many_collection": "post_type_translations",
+                "many_field": "post_type_id",
+                "one_collection": "post_type",
                 "one_field": "translations",
                 "one_collection_field": null,
                 "one_allowed_collections": null,
