@@ -1,20 +1,15 @@
 # Schema for Content Management System
 
-![](./diagram.png)
-
 ## Collections
 
-Consist of 4 main collections:
-1. post
-2. post_type
-3. collection
-4. tag
-5. stats
+Consist of 8 main collections:
+1. pages
+2. sections
+3. section_types
+4. post
+5. post_type
+6. collection
+7. tag
+8. languages
 
-And 1 junction collection:
-1. post_tag
-
-## Import
-
-1. Create a folder `CMS`.
-2. If none of the above collections have already been created, import the content of `all.json`. Otherwise, import collections with the following order: `collection` -> `tag` -> `stats` -> `post_type` -> `post` -> `post_tag`.
+And other collections for translations and analytics.
